@@ -14,6 +14,7 @@
     where date(p.payment_date) = '2005-07-30' and p.payment_date = r.rental_date and r.customer_id = c.customer_id and i.inventory_id = r.inventory_id
 
 перечислите узкие места;
+
 оптимизируйте запрос: внесите корректировки по использованию операторов, при необходимости добавьте индексы.
 
 Дополнительные задания (со звёздочкой*)
@@ -34,9 +35,11 @@
     SELECT SUM(index_length) / SUM(data_length) * 100
     FROM INFORMATION_SCHEMA.TABLES
 
-![img]()
+![img](https://github.com/01eg8/index/blob/main/img/Screenshot%20from%202025-03-20%2023-26-51.png)
 
 ### Задание 2
+
+![img](https://github.com/01eg8/index/blob/main/img/Screenshot%20from%202025-03-20%2023-33-46.png)
 
 В данном задании узкие места: 
 - таблица film и inventory не используются при работе запроса
@@ -52,17 +55,16 @@
     GROUP BY c.customer_id
 
 
-![img]()
+![img](https://github.com/01eg8/index/blob/main/img/Screenshot%20from%202025-03-20%2023-37-10.png)
 
-- для ускорения работы нужно создать индекс
+для ускорения работы нужно создать индекс
 
 
     CREATE INDEX payment_temp ON payment(payment_date)
 
 
-![img]()
-![img]()
-![img]()
+![img](https://github.com/01eg8/index/blob/main/img/Screenshot%20from%202025-03-20%2023-38-42.png)
+![img](https://github.com/01eg8/index/blob/main/img/Screenshot%20from%202025-03-20%2023-39-36.png)
 
 
 
