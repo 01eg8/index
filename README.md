@@ -46,6 +46,7 @@
 - выражение dictinct и SUM OVER можно убрать, и использовать GROUP BY
 - лучше использовать join 
 
+после доработки
 
     SELECT concat(c.last_name, ' ', c.first_name), SUM(p.amount)
     FROM customer c
